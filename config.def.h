@@ -124,7 +124,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 static const char *termcmd[] = { "foot", NULL };
 static const char *menucmd[] = { "wmenu-run", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
-
+static const char *passwordmanagercmd[] = { "keepmenu", "-C", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: 2 -> at, etc. */
@@ -139,6 +139,7 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_l,           setmfact,         {.f = +0.05f} },
 	{ MODKEY,                    XKB_KEY_z,           zoom,             {0} },
 	{ MODKEY,                    XKB_KEY_b,           spawn,            {.v = browsercmd} },
+	{ MODKEY,                    XKB_KEY_backslash,   spawn,            {.v = passwordmanagercmd} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_b,           togglebar,        {0} },
 	{ MODKEY,                    XKB_KEY_Tab,         view,             {0} },
 	{ MODKEY,                    XKB_KEY_q,           killclient,       {0} },
